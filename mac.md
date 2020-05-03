@@ -54,15 +54,42 @@ source ~/.zshrc //这是配置完文件后让文件生效的语句
 
 ### 一次性
 
-```
+```bash
 export http_proxy="http://127.0.0.1:1087"
-export http_proxy="https://127.0.0.1:1087"
+export https_proxy="http://127.0.0.1:1087"
 
+//上述两步可以合成一步
+export all_proxy="http://127.0.0.1:1087"
+
+//也可以尝试使用scoks路径
+export http_proxy="socks5://127.0.0.1:1080"
+export https_proxy="socks5://127.0.0.1:1080"
+
+//上述两步可以合成一步
+export all_proxy="scoks5://127.0.0.1:1080"
 ```
 
+### 永久性
 
+通过在配置文件中的添加脚本, 从而达到永久性的代理配置. 如果使用的`ohmyzsh`, 则直接添加到`.zshrc`中并生效即可.
 
-## GitHub代理配置
+```bash
+function proxy_on(){
+	export http_proxy="http://127.0.0.1:1087"
+	export https_proxy=$http_proxy
+	echo -e "已开启代理"
+	curl cip.cc
+}
+
+function proxy_off(){
+	unset http_proxy
+	unset https_proxy
+	echo -e "已关闭代理"
+	curl cip.cc
+}
+```
+
+## GitHub代理配置(不建议使用)
 
 由于国内环境, 所以克隆国外库的时候会奇慢无比, 这里提供一种方法来提升克隆速度.
 
