@@ -40,7 +40,7 @@ ZHE_THEME="ys"
 source ~/.zshrc //这是配置完文件后让文件生效的语句
 ```
 
-但为了能过正常显示所有主题, 还需要安装`Powerline fonts`字体, 这个可以按照[官网](https://github.com/powerline/fonts)的方式进行安装. 并在使用主题的时候, 在iterm2中设置对应的字体即可. 一般是将字体设置为`Meslo LG M for Powerline`即可. 
+但为了能过正常显示所有主题, 还需要安装`Powerline fonts`字体, 这个可以按照[官网](https://github.com/powerline/fonts)的方式进行安装. 并在使用主题的时候, 在iterm2中设置对应的字体即可. 一般是将字体设置为`Meslo LG M for Powerline`即可.  之后还可以为其配置[语法高亮插件](https://github.com/zsh-users/zsh-syntax-highlighting). 还有一些好用的[插件](https://www.jianshu.com/p/ba782b57ae96)
 
 **PS: 安装了ohmyzsh之后, 之后涉及到环境变量的配置, 都需要直接配置到.zshrc文件当中, 否则在iterm2的终端中是不会起作用的**
 
