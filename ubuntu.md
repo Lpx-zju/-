@@ -178,3 +178,6 @@ conda env remove -n env_name #删除虚拟环境
 
 [参考](https://www.cnblogs.com/tyty-Somnuspoppy/p/10007694.html)
 
+## 设置v2ray代理
+
+可以参考这篇[教程](https://www.jianshu.com/p/b122584f8941)进行设置
