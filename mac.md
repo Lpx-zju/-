@@ -1,4 +1,4 @@
-# Mac配置清单
+# Mac编程配置清单
 
 ## VPN
 
@@ -89,73 +89,36 @@ function proxy_off(){
 }
 ```
 
-## GitHub代理配置(不建议使用)
+## 修正Github网页无法显示图片的问题
 
-由于国内环境, 所以克隆国外库的时候会奇慢无比, 这里提供一种方法来提升克隆速度.
+通常我们开启代理之后，就可以流畅访问`google`，`github`等网页。但是在`github`上，有的时候无法正常的显示图片。因此我们需要修改对应的文件来解决这个问题。
 
-1. 首先打开已经配置好的代理
-2.  如果要设置全局代理, 可以按下发这样设置. 其中端口要根据自己的代理端口配置
-
-```bash
-git config --global http.proxy http://127.0.0.1:1080
-git config --global https.proxy https://127.0.0.1:1080
-```
-
-3. 完成上述步骤, 就可以用git clone xxx进行下载, 但只能使用https协议.
+当我们发现某个图片无法正常显示，我们可以通过`右键点击`，变选择`检查`，从而我们可以在编码界面看到对应图片的地址，如`raw.githubcontent.com`。此时我们可以通过[网站](https://githubusercontent.com.ipaddress.com/avatars0.githubusercontent.com)查看其对应的`ip`, 并将这条记录添加到==/private/etc/hosts==文件中，下面是我添加的一个样例：
 
 ```bash
-git clone https://www.github.com/xxx/xxx.git	//https协议是有效的
-git clone git@github.com:xxx/xxx.git	//ssh协议是无效的,需要另外设置
+# Github
+140.82.114.4 githbu.com
+140.82.113.4 gist.github.com
+
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 camo.githubusercontent.com
+199.232.68.133 cloud.githubusercontent.com
+199.232.68.133 images.githubusercontent.com
+199.232.68.133 avatars0.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars3.githubusercontent.com
 ```
 
-4. **不推荐使用全局代理**, 这样会导致国内的仓库变慢, 所以建议使用如下指令, 即只对github进行代理.
+所以，只要我们发现有图片无法加载了，我们就可以通过查找它的`ip`来添加记录，从而刷新网页即可。**但这个ip并不是一直不变的，当发生变化之后我们之前设置的记录就没有用了，此时需要我们更新ip值**。
 
-```bash
-git config --global http.https://github.com.proxy https://127.0.0.1:1080
-git config --global https.https://github.com.proxy https://127.0.0.1:1080
-```
+## 安装miniconda
 
-5. 如果希望使用ssh协议, 那么需要输入如下指令. (我用的vpn使用的就是这个)
+通过安装`miniconda`就可以帮助我们处理好所有的python环境，还可以进行包管理。同时相比于`anaconda`，这个更加轻量化。具体的信息可以查看`ubuntu`中的记录。
 
-```bash
-git config --global http.https://github.com.proxy socks5://127.0.0.1:1086
-git config --global https.https://github.com.proxy socks5://127.0.0.1:1086
-```
+## 安装CLion
 
-## Pyenv
-
-`Pyenv`是一款python版本管理工具, 用于不同版本的python的切换.
-
-```bash
-brew install pyenv //使用homebrew直接安装
-
-pyenv -v //查看pyenv的版本信息
-
-pyenv versions //查看已经安装的python版本信息, 默认显示的是system, 即系统版本
-
-pyenv install --list //查看可安装的python版本
-
-pyenv install 版本号 //安装指定的版本
-```
-
-安装的过程中, 可能会出现无法连接导致安装失败的情况. 这个时候需要开一下终端的代理, 从而就可以正常安装了.
-
-安装完成还需要配置`pyenv`的环境变量, 否则无法进行版本的切换. 环境变量在`.zshrc`文件中进行设置.
-
-```bash
-export PYENV_ROOT=~/.pyenv
-export PATH=$PYENV_ROOT/shims:$PATH
-```
-
-之后就可以进行版本的切换了, 具体的指令如下所示.
-
-```bash
-pyenv global 版本号 //设置全局的python版本
-pyenv local 版本号 //设置当前目录的python版本
-pyenv shell 版本号 //设置当前终端的python版本
-```
-
-如果需要换回到系统的版本, 则在版本号的位置直接填写`system`即可.
+这个是为了写`C++`的程序，因为有学生认证，所以可以免费进行使用。
 
 ## 更换pip镜像源
 
@@ -172,3 +135,14 @@ index-url = http://pypi.douban.com/simple
 trusted-host = pypi.douban.com
 ```
 
+
+
+# 使用软件清单
+
+- IINA：一款使用的本地播放器
+- CheatSheet：快速查看快捷键的插件
+- Spectacle：帮助进行分屏的插件
+- office：通过学校的资源进行安装
+- eZip：好用的压缩软件
+- Typora：markdow编辑器
+- Xmind：思维导图
