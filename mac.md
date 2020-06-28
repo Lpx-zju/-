@@ -146,3 +146,8 @@ trusted-host = pypi.douban.com
 - eZip：好用的压缩软件
 - Typora：markdow编辑器
 - Xmind：思维导图
+- Mos：使用鼠标时必装软件，让鼠标的滚动方向和触控板相反
+- Amphetamine：一个用于快速防止电脑睡眠的小程序
+- Downie：能够通过网络的连接快速下载视频的程序，很好用，能够应用于很多网页
+- Dynamic Wallpaper：设置电脑的动态壁纸
+
